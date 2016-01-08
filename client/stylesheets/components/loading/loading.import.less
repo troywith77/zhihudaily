@@ -1,0 +1,99 @@
+.tcon-loader--spinner360
+{
+    position: relative;
+
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 100px auto;
+
+    -webkit-animation: tcon-spin360 .675s linear infinite forwards;
+            animation: tcon-spin360 .675s linear infinite forwards;
+
+    border-radius: 80%;
+    background-image: linear-gradient(#c06c84, #f67280);
+}
+.tcon-loader--spinner360:before,
+.tcon-loader--spinner360:after
+{
+    position: absolute; 
+
+    display: block;
+
+    content: '';
+}
+.tcon-loader--spinner360:before
+{
+    z-index: 1;
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 40px;
+
+    border-radius: 0 90px 90px 0;
+    background: black;
+    background-image: linear-gradient(#c06c84, #f67280);
+}
+.tcon-loader--spinner360:after
+{
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+    border-radius: 80%;
+    background: white;
+}
+
+@-webkit-keyframes tcon-spin360
+{
+    to
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+@keyframes tcon-spin360
+{
+    to
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+.tcon-visuallyhidden
+{
+    position: absolute;
+
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    width: 1px; 
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+}
+.tcon-visuallyhidden:active,
+.tcon-visuallyhidden:focus
+{
+    position: static;
+
+    overflow: visible;
+    clip: auto;
+
+    width: auto; 
+    height: auto;
+    margin: 0;
+}

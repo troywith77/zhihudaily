@@ -1,6 +1,13 @@
 <template name="homePage">
+
+	{{#if isLoading}}
+		{{> loading}}
+	{{/if}}
+
+	{{> swiper}}
+
 	<section class="home-page">
-		<h3 class="time-line">{{getToday}} 的知乎日报</h3>
+		<h3 class="time-line">{{getToday}}</h3>
 
 		<section class="latest-news">
 			<ul>

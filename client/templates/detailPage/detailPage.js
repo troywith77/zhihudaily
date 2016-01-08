@@ -1,12 +1,13 @@
 var detail = new ReactiveVar({}),
-	contentHTML = new ReactiveVar("");
+	contentHTML = new ReactiveVar(""),
+	loadingState = new ReactiveVar(true);
 
 Template.detailPage.onRendered(function() {
 	Meteor.call('getDetailPage', Router.current().params.key, function(error, result) {
 		if(result) {
-			console.log(result.data)
 			contentHTML.set(result.data.body.replace(/http\w{0,1}:\/\/pic/g, "https://images.weserv.nl/?url=pic"));
 			detail.set(result.data);
+			loadingState.set(false);
 		}
 	})
 	$("html, body").animate({
@@ -20,5 +21,8 @@ Template.detailPage.helpers({
 	},
 	content: function() {
 		return contentHTML.get();
+	},
+	isLoading: function() {
+		return loadingState.get();
 	}
 })

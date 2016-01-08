@@ -1,0 +1,18 @@
+<template name="swiper">
+	<!-- Slider main container -->
+	<div class="swiper-container">
+	    <!-- Additional required wrapper -->
+	    <div class="swiper-wrapper">
+	        <!-- Slides -->
+	        {{#each topStory}}
+	        	<a class="swiper-slide" href="/detail/{{id}}">
+					<img src="{{imagePath}}" alt="">
+					<p>{{title}}</p>
+	        	</a>
+	        {{/each}}
+	        ...
+	    </div>
+	    <!-- If we need pagination -->
+	    <div class="swiper-pagination"></div>
+	</div>
+</template>

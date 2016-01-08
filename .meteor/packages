@@ -22,3 +22,5 @@ iron:router
 less
 reactive-var
 http
+zimme:active-route
+swiper:swiper

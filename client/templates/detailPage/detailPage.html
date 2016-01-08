@@ -1,4 +1,7 @@
 <template name="detailPage">
+	{{#if isLoading}}
+		{{> loading}}
+	{{/if}}
 	<section class="detail-page">
 		<h3>{{title}}</h3>
 
