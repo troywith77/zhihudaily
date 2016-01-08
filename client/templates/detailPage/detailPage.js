@@ -4,7 +4,8 @@ var detail = new ReactiveVar({}),
 Template.detailPage.onRendered(function() {
 	Meteor.call('getDetailPage', Router.current().params.key, function(error, result) {
 		if(result) {
-			contentHTML.set(result.data.body.replace(/http:\/\//g, "https://images.weserv.nl/?url="));
+			console.log(result.data)
+			contentHTML.set(result.data.body.replace(/http\w{0,1}:\/\/pic/g, "https://images.weserv.nl/?url=pic"));
 			detail.set(result.data);
 		}
 	})

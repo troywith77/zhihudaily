@@ -4,6 +4,7 @@ var latestNewsList = new ReactiveVar([]),
 Template.homePage.onRendered(function() {
 	Meteor.call('getLatestNews', function(error, result) {
 		if(result) {
+			console.log(result.data);
 			latestNewsList.set(result.data.stories);
 			todayDate.set(result.data.date);
 		}

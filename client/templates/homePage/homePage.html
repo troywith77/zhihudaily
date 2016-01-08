@@ -1,9 +1,8 @@
 <template name="homePage">
 	<section class="home-page">
-		<h2 class="home-header">Zhihu</h2>
+		<h3 class="time-line">{{getToday}} 的知乎日报</h3>
 
 		<section class="latest-news">
-			<h3>Today is {{getToday}}</h3>
 			<ul>
 				{{#each latestNews}}
 					{{> latestNewsItem}}
@@ -12,12 +11,18 @@
 		</section>
 	</section>
 
-	{{> openBg}}
+	<!-- {{#contentFor 'footer'}}
+		<p style="margin-top:50px;clear:both">written by troy</p>
+	{{/contentFor}} -->
+
+	<!-- {{> openBg}} -->
 </template>
 
 <template name="latestNewsItem">
 	<li class="latest-news-item">
-		<img src="{{itemImg}}" alt="">		
-		<a href="/detail/{{id}}">{{title}}</a>
+		<a href="/detail/{{id}}">
+			<div class="image"><img src="{{itemImg}}" alt="{{title}}"></div>	
+			<div class="title">{{title}}</div>
+		</a>
 	</li>
 </template>
