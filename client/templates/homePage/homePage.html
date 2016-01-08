@@ -1,0 +1,20 @@
+<template name="homePage">
+	<section class="home-page">
+		<h2 class="home-header">Zhihu</h2>
+
+		<section class="latest-news">
+			<h3>Today is {{getToday}}</h3>
+			<ul>
+				{{#each latestNews}}
+					{{> latestNewsItem}}
+				{{/each}}
+			</ul>
+		</section>
+	</section>
+</template>
+
+<template name="latestNewsItem">
+	<li class="latest-news-item">
+		<a href="/detail/{{id}}">{{title}}</a>
+	</li>
+</template>
