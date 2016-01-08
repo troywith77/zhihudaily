@@ -11,10 +11,14 @@
 			</ul>
 		</section>
 	</section>
+
+	<!-- {{> openBg}} -->
 </template>
 
 <template name="latestNewsItem">
 	<li class="latest-news-item">
+		{{{itemImg}}}
+		
 		<a href="/detail/{{id}}">{{title}}</a>
 	</li>
 </template>
