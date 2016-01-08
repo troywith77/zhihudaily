@@ -13,3 +13,8 @@ Template.registerHelper('showOpenImg', function(url) {
     ' style="height:100%;width:100%" /><script>window.onload = function() { document.getElementsByTagName("body")[0].style.margin="0" }<'+'/script>';
     return ('<iframe id="'+frameid+'" src="javascript:parent.img;" frameBorder="0" scrolling="no" width="100%" height="100%"></iframe>');
 })
+
+Template.registerHelper('getImagePath', function(url) {
+	var base_url = 'https://images.weserv.nl/?url=';
+	return base_url + url.substr(7);  //应该都是第七位吧。。。
+})

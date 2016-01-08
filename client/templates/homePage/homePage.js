@@ -4,7 +4,6 @@ var latestNewsList = new ReactiveVar([]),
 Template.homePage.onRendered(function() {
 	Meteor.call('getLatestNews', function(error, result) {
 		if(result) {
-			console.log(result.data)
 			latestNewsList.set(result.data.stories);
 			todayDate.set(result.data.date);
 		}
@@ -23,6 +22,6 @@ Template.homePage.helpers({
 
 Template.latestNewsItem.helpers({
 	itemImg: function() {
-		return UI._globalHelpers.showImg(this.images[0])
+		return UI._globalHelpers.getImagePath(this.images[0])
 	}
 })

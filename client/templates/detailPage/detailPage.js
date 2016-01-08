@@ -1,11 +1,16 @@
-var detail = new ReactiveVar({});
+var detail = new ReactiveVar({}),
+	contentHTML = new ReactiveVar("");
 
 Template.detailPage.onRendered(function() {
 	Meteor.call('getDetailPage', Router.current().params.key, function(error, result) {
 		if(result) {
-			detail.set(result.data)
+			contentHTML.set(result.data.body.replace(/http:\/\//g, "https://images.weserv.nl/?url="));
+			detail.set(result.data);
 		}
 	})
+	$("html, body").animate({
+		scrollTop: 0
+	}, 200);
 })
 
 Template.detailPage.helpers({
@@ -13,6 +18,6 @@ Template.detailPage.helpers({
 		return detail.get().title;
 	},
 	content: function() {
-		return detail.get().body;
+		return contentHTML.get();
 	}
 })
