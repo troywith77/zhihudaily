@@ -1,0 +1,24 @@
+<template name="mainPage">
+	{{> swiper}}
+
+	<section class="main-page">
+		<h3 class="time-line">{{getToday}}</h3>
+
+		<section class="latest-news">
+			<ul>
+				{{#each latestNews}}
+					{{> latestNewsItem}}
+				{{/each}}
+			</ul>
+		</section>
+	</section>
+</template>
+
+<template name="latestNewsItem">
+	<li class="home-list-item">
+		<a href="/detail/{{id}}">
+			<div class="image"><img src="{{itemImg}}" alt="{{title}}"></div>	
+			<div class="title">{{title}}</div>
+		</a>
+	</li>
+</template>

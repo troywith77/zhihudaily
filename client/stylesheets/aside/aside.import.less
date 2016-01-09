@@ -1,0 +1,39 @@
+.aside-menu {
+	position: fixed;
+	top: 60px;
+	left: 0;
+	width: 60%;
+	height: 100%;
+	background-color: #334;
+	z-index: 200;
+	transform: -webkit-translate(-100%);
+	transform: -moz-translate(-100%);
+	transform: -ms-translate(-100%);
+	transform: -o-translate(-100%);
+	transform: translate(-100%);
+	transition: .6s;
+
+	&.open {
+		transform: -webkit-translate(0);
+		transform: -moz-translate(0);
+		transform: -ms-translate(0);
+		transform: -o-translate(0);
+		transform: translate(0);
+	}
+
+	ul {
+		height: 100%;
+	}
+
+	li {
+		height: 6%;
+		line-height: 30px;
+		text-align: center;
+	}
+
+	ul li a {
+		color: @whiteFontColor;
+		text-align: center;
+		display: block;	
+	}
+}

@@ -1,35 +1,18 @@
 <template name="homePage">
-
+<section class="home-page">
 	{{#if isLoading}}
 		{{> loading}}
 	{{/if}}
 
-	{{> swiper}}
+	{{#if isThemes}}
+		
+		{{> themePage}}
 
-	<section class="home-page">
-		<h3 class="time-line">{{getToday}}</h3>
+	{{else}}
 
-		<section class="latest-news">
-			<ul>
-				{{#each latestNews}}
-					{{> latestNewsItem}}
-				{{/each}}
-			</ul>
-		</section>
-	</section>
+		{{> mainPage}}
 
-	<!-- {{#contentFor 'footer'}}
-		<p style="margin-top:50px;clear:both">written by troy</p>
-	{{/contentFor}} -->
-
+	{{/if}}
 	<!-- {{> openBg}} -->
-</template>
-
-<template name="latestNewsItem">
-	<li class="latest-news-item">
-		<a href="/detail/{{id}}">
-			<div class="image"><img src="{{itemImg}}" alt="{{title}}"></div>	
-			<div class="title">{{title}}</div>
-		</a>
-	</li>
+</section>
 </template>

@@ -1,47 +1,69 @@
-.home-page {
-	.time-line {
-		padding: 15px 15px 0;
-		margin: 0;
-	}
+.main-page,
+.theme-page
+{
+    .time-line
+    {
+        margin: 0;
+        padding: 15px 15px 0;
+    }
+    .head
+    {
+        color: #222;
+    }
+    .home-list-item
+    {
+        display: block;
+        clear: both;
 
-	.head {
-		color: #222;
-	}
+        height: 60px;
+        padding: 15px;
 
-	.latest-news {
-		.latest-news-item {
-			text-align: center;
-			padding: 15px;
-			clear: both;
-			height: 60px;
-			display: block;
+        text-align: center;
+        a
+        {
+            // display: -webkit-flex;
+            // display: -moz-flex;
+            // display: -ms-flex;
+            // display: -o-flex;
+            // display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        .image
+        {
+            float: left;
+            background-color: #fff;
 
-			a {
-				// display: -webkit-flex;
-				// display: -moz-flex;
-				// display: -ms-flex;
-				// display: -o-flex;
-				// display: flex;
-				width: 100%;
-				height: 100%;
-			}
+            width: 20%;
+            img
+            {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        .title
+        {
+            font-weight: bold;
 
-			.image {
-				float: left;
-				width: 20%;
-				img {
-					width: 60px;
-					height: 60px;
-				}
-			}
-			.title {
-				float: left;
-				width: 70%;
-				margin-left: 15px;
-				font-weight: bold;
-				display: inline;
-				text-align: left;
-			}
-		}
-	}
+            display: inline;
+            float: left;
+
+            width: 70%;
+            margin-left: 15px;
+
+            text-align: left;
+        }
+    }
+}
+
+.theme-page {
+    .theme-logo {
+        img {
+            width: 100%;
+        }
+    }
+
+    h2 {
+        margin-left: 15px;
+    }
 }
