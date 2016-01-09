@@ -1,25 +1,35 @@
-var themeContent = new ReactiveVar([]);
+var themeContent = new ReactiveVar([]),
+	themeTitle = new ReactiveVar(''),
+	themeDescription = new ReactiveVar(''),
+	themeLogo = new ReactiveVar('');
+
+getThemes = function() {
+	Meteor.call('getThemesListContent', Session.get('theme-id') , function(error, result) {
+		if(result) {
+			themeContent.set(result.data.stories);
+			themeTitle.set(result.data.name);
+			themeDescription.set(result.data.description);
+			themeLogo.set(result.data.image);
+		}
+	})
+}
 
 Template.themePage.onRendered(function() {
-	
-})
-
-Template.themeContentItem.onRendered(function() {
-
+	getThemes();
 })
 
 Template.themePage.helpers({
 	themeContent: function() {
-		return ThemeContentList.find({});
+		return themeContent.get();
 	},
 	themeTitle: function() {
-		return Session.get('theme-title');
+		return themeTitle.get();
 	},
 	subTitle: function() {
-		return Session.get('theme-description');
+		return themeDescription.get()
 	},
 	logoImage: function() {
-		return UI._globalHelpers.getImagePath(Session.get('theme-logo'))
+		return UI._globalHelpers.getImagePath(themeLogo.get())
 	}
 })
 
@@ -31,5 +41,10 @@ Template.themeContentItem.helpers({
 			return UI._globalHelpers.getImagePath(Session.get('no-image-src'));
 		}
 	}
+})
 
+Template.themeContentItem.events({
+	'click .link': function() {
+		Session.set('detail-has-title', false);
+	}
 })

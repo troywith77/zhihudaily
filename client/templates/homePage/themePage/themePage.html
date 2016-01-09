@@ -3,7 +3,8 @@
 		<div class="theme-logo">
 			<img src="{{logoImage}}" alt="{{themeTitle}}">
 		</div>
-		<h2>{{themeTitle}}<small>{{subTitle}}</small></h2>
+		<h2>{{themeTitle}}<br />
+		<small>{{subTitle}}</small></h2>
 		<ul>
 		{{#each themeContent}}
 			{{> themeContentItem}}
@@ -14,7 +15,7 @@
 
 <template name="themeContentItem">
 	<li class="home-list-item">
-		<a href="/detail/{{id}}">
+		<a href="/detail/{{id}}" class="link">
 			<div class="image"><img src="{{itemImg}}" alt="{{title}}"></div>	
 			<div class="title">{{title}}</div>
 		</a>

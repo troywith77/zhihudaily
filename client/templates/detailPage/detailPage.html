@@ -3,8 +3,10 @@
 		{{> loading}}
 	{{/if}}
 	<section class="detail-page">
-		<h3>{{title}}</h3>
-
+		{{#if hasTitle}}
+			<h3>{{title}}</h3>
+		{{/if}}
+		
 		{{{content}}}
 	</section>
 </template>

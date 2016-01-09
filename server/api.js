@@ -5,6 +5,7 @@ var latestNews = "4/news/latest";
 var detail = "4/news/";
 var themesList = "4/themes";
 var themesListContent = "4/theme/";
+var historyNews = "4/news/before/";
 
 Meteor.methods({
 	getOpenBg: function() {
@@ -23,10 +24,7 @@ Meteor.methods({
 	getThemesListContent: function(id) {
 		return HTTP.get( API_BASE + themesListContent + id);
 	},
-	removeMainList: function() {
-		MainList.remove({});
-	},
-	removeThemeContentList: function() {
-		ThemeContentList.remove({});
+	getHistoryNews: function(date) {
+		return HTTP.get( API_BASE + historyNews + date );
 	}
 })

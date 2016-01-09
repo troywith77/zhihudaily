@@ -1,7 +1,10 @@
 <template name="mainPage">
-	{{> swiper}}
-
 	<section class="main-page">
+	{{#if isTrashBrowser}}
+	{{else}}
+		{{> swiper}}
+	{{/if}}
+
 		<h3 class="time-line">{{getToday}}</h3>
 
 		<section class="latest-news">
@@ -11,12 +14,14 @@
 				{{/each}}
 			</ul>
 		</section>
+
+		{{> pagination}}
 	</section>
 </template>
 
 <template name="latestNewsItem">
 	<li class="home-list-item">
-		<a href="/detail/{{id}}">
+		<a href="/detail/{{id}}" class="link">
 			<div class="image"><img src="{{itemImg}}" alt="{{title}}"></div>	
 			<div class="title">{{title}}</div>
 		</a>
