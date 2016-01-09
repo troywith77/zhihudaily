@@ -7,6 +7,8 @@
 
 		<h3 class="time-line">{{getToday}}</h3>
 
+		{{> pagination}}
+		
 		<section class="latest-news">
 			<ul>
 				{{#each latestNews}}
@@ -15,7 +17,6 @@
 			</ul>
 		</section>
 
-		{{> pagination}}
 	</section>
 </template>
 

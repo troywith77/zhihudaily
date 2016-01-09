@@ -22,9 +22,33 @@
     		font-size: 22px;
             text-align: justify;
     	}
+
     }
 
     .swiper-pagination-bullet-active {
     	background-color: #f48b94;
     }
+
 }   
+    @media screen and (min-width: 600px) {
+        .swiper-container {
+            width: auto;
+            height: 600px;
+            .swiper-wrapper {
+                width: auto;
+                .swiper-slide {
+                    width: auto;
+                    img {
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .swiper-slide p {
+            text-align: center;
+            width: 600px;
+            margin: 0;
+            bottom: 50px;
+        }
+    }

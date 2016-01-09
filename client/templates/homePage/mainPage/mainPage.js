@@ -6,7 +6,7 @@ Template.mainPage.onRendered(function() {
 	Meteor.call('getLatestNews', function(error, result) {
 		if(result) {
 			latestNewsList.set(result.data.stories)
-			todayDate.set(result.data.date);
+			if(!todayDate.get()) todayDate.set(result.data.date);
 		}
 	})
 })
@@ -48,10 +48,6 @@ changeDate = function(date) {
 		if(result) {
 			diffStories.set(result.data.stories);
 			todayDate.set(result.data.date);
-
-			$("body").animate({
-				scrollTop: 0
-			}, 200);
 		}
 	})	
 }
