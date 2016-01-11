@@ -1,4 +1,4 @@
-# zhihudaily
+# Zhihu Daily
 知乎日报( Web版 )
 版本号： 1.1.0
 利用知乎日报API制作的轻日报，适配Mobile，针对PC做了简单的适配
@@ -9,7 +9,7 @@
 - 查看主题日报
 - 查看日报详情
 
-主体功能已编写完毕，并且同步部署到Meteor，[查看地址](zhihu.meteor.com)
+主体功能已编写完毕，并且同步部署到Meteor，[查看地址](http://zhihu.meteor.com)
 
 > 翻墙速度更快哦
 
