@@ -24,7 +24,7 @@ Template.mainPage.helpers({
 	},
 	getToday: function() {
 		var date = todayDate.get(); 
-		return date.substr(0,4) + ' - ' + date.substr(4, 2) + ' - ' + date.substr(6);
+		if(date) return date.substr(0,4) + ' - ' + date.substr(4, 2) + ' - ' + date.substr(6);
 	},
 	isTrashBrowser: function() {
 		return isTranshBrowser();

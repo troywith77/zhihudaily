@@ -1,5 +1,5 @@
 var currentDate = new ReactiveVar(),
-	prevDays = new ReactiveVar(0);
+	prevDays = new ReactiveVar(-1);
 
 Template.pagination.events({
 	'click .prev': function() {
@@ -8,8 +8,10 @@ Template.pagination.events({
 		changeDate(currentDate.get());
 	},
 	'click .next': function() {
-		prevDays.set(prevDays.get() - 1);
-		currentDate.set(moment().subtract(prevDays.get(), 'days').format('YYYYMMDD'));
-		changeDate(currentDate.get());
+		if(prevDays.get() > -1) {
+			prevDays.set(prevDays.get() - 1);
+			currentDate.set(moment().subtract(prevDays.get(), 'days').format('YYYYMMDD'));
+			changeDate(currentDate.get());
+		}
 	}
 })
