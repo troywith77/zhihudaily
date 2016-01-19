@@ -20,6 +20,10 @@ Template.detailPage.onRendered(function() {
 	})
 })
 
+Template.detailPage.onDestroyed(function() {
+	detail.set('')
+})
+
 Template.detailPage.helpers({
 	title: function() {
 		return detail.get().title;
