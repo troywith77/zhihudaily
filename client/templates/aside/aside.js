@@ -33,8 +33,7 @@ Template.aside.events({
 		})
 		Session.set({
 			'is-in-themes': true,
-			'open-menu': '',
-			'no-image-src': thumbnailSrc
+			'open-menu': ''
 		});
 		getThemes();
 	},

@@ -1,5 +1,8 @@
 <template name="themePage">
 	<section class="theme-page">
+		{{#if isLoading}}
+		{{> loading}}
+		{{else}}
 		<div class="theme-logo">
 			<img src="{{logoImage}}" alt="{{themeTitle}}">
 		</div>
@@ -10,14 +13,17 @@
 			{{> themeContentItem}}
 		{{/each}}
 		</ul>
+		{{/if}}
 	</section>
 </template>
 
 <template name="themeContentItem">
 	<li class="home-list-item">
 		<a href="/detail/{{id}}" class="link">
-			<div class="image"><img src="{{itemImg}}" alt="{{title}}"></div>	
 			<div class="title">{{title}}</div>
+		{{#if itemImg}}
+			<div class="image"><img src="{{itemImg}}" alt="{{title}}"></div>
+		{{/if}}
 		</a>
 	</li>
 </template>

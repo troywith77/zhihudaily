@@ -4,6 +4,7 @@ var detail = new ReactiveVar({}),
 
 Template.detailPage.onRendered(function() {
 	contentHTML.set('');
+	loadingState.set(true);
 	Meteor.call('getDetailPage', Router.current().params.key, function(error, result) {
 		if(result) {
 			if(result.data.body) {
